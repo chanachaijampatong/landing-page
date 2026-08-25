@@ -5,16 +5,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="แผนกเทคโนโลยีสารสนเทศ สร้างสรรค์ระบบดิจิทัลเพื่ออนาคตที่ดีกว่า">
   <title>IT NEXT | แผนกเทคโนโลยีสารสนเทศ</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- ไฟล์ CSS เดิมของคุณ -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- เพิ่ม CSS Override สำหรับ Dark Mode และ Smooth Scroll -->
+  <style>
+    /* 1. ทำให้เลื่อนหน้าเว็บแบบนุ่มนวลเวลาคลิกเมนู */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* 2. เปลี่ยนธีมเป็น Dark Mode */
+    body {
+      background-color: #0f1115 !important; /* พื้นหลังสีดำอมเทา */
+      color: #e2e8f0 !important; /* ตัวหนังสือสีขาวหม่น */
+    }
+
+    /* ปรับ Header ให้เข้ากับธีมมืด */
+    .site-header {
+      background-color: rgba(15, 17, 21, 0.9) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #1f2937;
+    }
+
+    /* ปรับสีเมนูและโลโก้ */
+    .nav-links a, .brand, .brand strong {
+      color: #e2e8f0 !important;
+    }
+    .nav-links a.active, .nav-links a:hover, .brand-mark i, .nav-cta {
+      color: #10b981 !important; /* สีเขียวมรกตเป็นสีเด่น */
+    }
+
+    /* ปรับสีพื้นหลังของการ์ดและส่วนประกอบต่างๆ ให้กลืนกับพื้นสีดำ */
+    .service-card, .project-card, .contact-box, .floating-note, .circle-stamp {
+      background-color: #1a1d24 !important;
+      border: 1px solid #2d3748 !important;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+    }
+    
+    .trusted.container, .intro-section {
+      background-color: transparent !important;
+    }
+
+    /* ปรับสีหัวข้อให้สว่างขึ้น */
+    h1, h2, h3, h4, .hero-meta strong, .eyebrow {
+      color: #ffffff !important;
+    }
+
+    /* ปรับสีข้อความรอง (Paragraph) */
+    p, .hero-text, .section-description, .hero-meta span, .floating-note span {
+      color: #94a3b8 !important;
+    }
+
+    /* ปรับปุ่มหลัก (Primary Button) */
+    .button-primary {
+      background-color: #10b981 !important;
+      color: #ffffff !important;
+      border: none !important;
+    }
+    .button-primary:hover {
+      background-color: #059669 !important;
+    }
+
+    /* ลิงก์แบบข้อความ */
+    .text-link {
+      color: #10b981 !important;
+    }
+
+    /* ส่วน Footer */
+    .site-footer {
+      background-color: #0b0c0f !important;
+      border-top: 1px solid #1f2937 !important;
+      color: #94a3b8 !important;
+    }
+    .socials a {
+      color: #e2e8f0 !important;
+    }
+    .socials a:hover {
+      color: #10b981 !important;
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header" id="top">
+  <header class="site-header">
     <nav class="nav container" aria-label="เมนูหลัก">
-      <a class="brand" href="#top" aria-label="IT NEXT หน้าแรก">
+      <!-- เปลี่ยน href เป็น #home -->
+      <a class="brand" href="#home" aria-label="IT NEXT หน้าแรก">
         <span class="brand-mark"><i class="fa-solid fa-terminal"></i></span>
         <span><strong>IT</strong> NEXT</span>
       </a>
@@ -22,7 +104,8 @@
         <i class="fa-solid fa-bars"></i>
       </button>
       <div class="nav-links">
-        <a class="active" href="#top">หน้าแรก</a>
+        <!-- เปลี่ยน href เป็น #home -->
+        <a class="active" href="#home">หน้าแรก</a>
         <a href="#about">เกี่ยวกับเรา</a>
         <a href="#services">บริการ</a>
         <a href="#projects">ผลงาน</a>
@@ -33,7 +116,8 @@
   </header>
 
   <main>
-    <section class="hero container" aria-labelledby="hero-title">
+    <!-- เพิ่ม id="home" ตรงนี้ เพื่อให้เมนูหน้าแรกเลื่อนมาตรงนี้ -->
+    <section id="home" class="hero container" aria-labelledby="hero-title">
       <div class="hero-copy reveal">
         <p class="eyebrow"><span></span> เทคโนโลยีเพื่อการเปลี่ยนแปลง</p>
         <h1 id="hero-title">เปลี่ยนไอเดีย<br><em>ให้เป็นอนาคต</em></h1>
@@ -93,7 +177,16 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid"><a class="brand" href="#top"><span class="brand-mark"><i class="fa-solid fa-terminal"></i></span><span><strong>IT</strong> NEXT</span></a><p>สร้างอนาคตด้วยเทคโนโลยี<br>ที่เข้าใจมนุษย์</p><div class="socials"><a href="#contact" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="#contact" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="#contact" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div><span class="copyright">© 2024 IT NEXT. สงวนลิขสิทธิ์ · เวอร์ชัน 1.0.3</span></div>
+    <div class="container footer-grid">
+      <a class="brand" href="#home"><span class="brand-mark"><i class="fa-solid fa-terminal"></i></span><span><strong>IT</strong> NEXT</span></a>
+      <p>สร้างอนาคตด้วยเทคโนโลยี<br>ที่เข้าใจมนุษย์</p>
+      <div class="socials">
+        <a href="#contact" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#contact" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#contact" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <span class="copyright">© 2024 IT NEXT. สงวนลิขสิทธิ์ · เวอร์ชัน 1.0.3</span>
+    </div>
   </footer>
   <script src="script.js"></script>
 </body>
